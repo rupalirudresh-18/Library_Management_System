@@ -3,7 +3,8 @@
 A full-stack Library Management System built with **Java Spring Boot**, **MySQL**, and a custom HTML/CSS/JS frontend — built as a placement-ready project demonstrating real-world backend engineering: REST APIs, relational data modeling, automated email notifications, PDF generation, and scheduled background jobs.
 
 🔗 **Live Demo:** 
-librarymanagementsystem-production-03c7.up.railway.app 
+librarymanagementsystem-production-03c7.up.railway.app
+
 
 ---
 
