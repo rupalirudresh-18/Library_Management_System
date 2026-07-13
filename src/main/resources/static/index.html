@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SJBIT Library Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="index-page">
+  <div class="bg-image"></div>
+  <div class="overlay"></div>
+
+  <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
+
+  <div class="login-container">
+    <h1 class="college-title">SJB Institute of Technology</h1>
+    <h2 class="system-title">Library Management System</h2>
+    <p class="welcome-text">Welcome! Please select your role and login to continue.</p>
+
+    <div class="login-form">
+      <select id="role">
+        <option value="">-- Select Role --</option>
+        <option value="student">Student</option>
+        <option value="librarian">Librarian</option>
+        <option value="staff">Library Staff</option>
+        <option value="admin">Admin</option>
+      </select>
+
+      <input type="text" id="email" placeholder="Email or Library ID">
+      <input type="password" id="password" placeholder="Password">
+
+      <button class="btn btn-primary" onclick="authLogin()">Login</button>
+      <button class="btn btn-neutral" onclick="showSignup()">Create Account</button>
+
+      <div style="font-size:13px;color:#666;margin-top:8px">
+        Tip: Create your own account for any role to login.
+      </div>
+    </div>
+  </div>
+
+  <footer>© Library Management System 2025</footer>
+
+  <!-- Signup Modal -->
+  <div id="signup-modal" class="modal">
+    <div class="modal-content">
+      <div class="close-btn" onclick="closeSignup()">✕</div>
+      <h2>Create Account</h2>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+        <input id="su-name" class="input-small" placeholder="Full name (required)">
+        <select id="su-role" class="input-small" onchange="onSignupRoleChange()">
+          <option value="">-- Select Role --</option>
+          <option value="student">Student</option>
+          <option value="librarian">Librarian</option>
+          <option value="staff">Library Staff</option>
+          <option value="admin">Admin</option>
+        </select>
+        <input id="su-id" class="input-small" placeholder="Library ID (eg: s123) (required)">
+        <div id="su-email-wrap" class="hidden">
+          <input id="su-email" class="input-small" type="email" placeholder="Email (for borrow/return notifications)">
+          <input id="su-sem" class="input-small" placeholder="Semester (eg: 5th)" style="margin-top:8px">
+          <input id="su-contact" class="input-small" placeholder="Contact number" style="margin-top:8px">
+        </div>
+        <input id="su-branch" class="input-small" placeholder="Branch (eg: CSE)">
+        <input id="su-year" class="input-small" placeholder="Year (only for students)">
+        <input id="su-password" class="input-small" type="password" placeholder="Password (required)">
+        <div style="display:flex;gap:8px;justify-content:center;">
+          <button class="btn btn-primary" onclick="signupUser()">Create</button>
+          <button class="btn btn-neutral" onclick="closeSignup()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

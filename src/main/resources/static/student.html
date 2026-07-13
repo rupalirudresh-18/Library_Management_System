@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student/faculty Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard">
+  <div class="navbar">
+    <div class="left">
+      <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+      <h1>📚 STudent/Faculty Dashboard</h1>
+    </div>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+
+  <div class="sidebar">
+    <h2>Menu</h2>
+    <ul>
+      <li onclick="showPanel('borrow')">📖 Borrow Book</li>
+      <li onclick="showPanel('returns')">↩ Return / Renew</li>
+      <li onclick="showPanel('history')">📜 Borrow History</li>
+      <li onclick="showPanel('fines')">💰 Fines Due</li>
+      <li onclick="showPanel('elibrary')">🌐 E-Library</li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <div class="cards-grid">
+      <div class="card green" onclick="showPanel('borrow')"><h3>Borrow Books</h3><p>Request and view available books</p></div>
+      <div class="card blue" onclick="showPanel('returns')"><h3>Return / Renew</h3><p>Manage your borrowed books</p></div>
+      <div class="card orange" onclick="showPanel('fines')"><h3>Fines</h3><p>View pending dues</p></div>
+      <div class="card purple" onclick="showPanel('elibrary')"><h3>E-Library</h3><p>Access digital collection</p></div>
+    </div>
+
+    <div id="borrow" class="panel hidden">
+      <h2>Search & Borrow Books</h2>
+      <div class="form-row">
+        <input type="text" placeholder="Search by Book Title" class="input-small">
+        <button class="btn btn-primary">Search</button>
+      </div>
+      <p>Results will appear here...</p>
+    </div>
+
+    <div id="returns" class="panel hidden">
+      <h2>Return / Renew Books</h2>
+      <p>View borrowed books and return or renew them here.</p>
+    </div>
+
+    <div id="history" class="panel hidden">
+      <h2>Borrow History</h2>
+      <p>All your past borrowed books will appear here.</p>
+    </div>
+
+    <div id="fines" class="panel hidden">
+      <h2>Fines & Dues</h2>
+      <p>Fine details will appear here.</p>
+    </div>
+
+    <div id="elibrary" class="panel hidden">
+      <h2>E-Library</h2>
+      <p>Download available digital resources here.</p>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>

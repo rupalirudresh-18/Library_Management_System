@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Librarian Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard">
+  <div class="navbar">
+    <div class="left">
+      <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+      <h1>📚 Librarian Dashboard</h1>
+    </div>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+
+  <div class="sidebar">
+    <h2>Menu</h2>
+    <ul>
+      <li onclick="showPanel('issue')">📖 Issue / Return Books</li>
+      <li onclick="showPanel('inventory')">📚 Inventory</li>
+      <li onclick="showPanel('members')">👥 Members</li>
+      <li onclick="showPanel('reports')">📊 Reports</li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <div class="cards-grid">
+      <div class="card green" onclick="showPanel('issue')"><h3>Issue / Return</h3><p>Manage book lending</p></div>
+      <div class="card blue" onclick="showPanel('inventory')"><h3>Book Records</h3><p>View inventory by branch</p></div>
+      <div class="card orange" onclick="showPanel('members')"><h3>Members</h3><p>View library members & validity</p></div>
+      <div class="card purple" onclick="showPanel('reports')"><h3>Reports</h3><p>Fines & usage reports</p></div>
+    </div>
+
+    <div id="issue" class="panel hidden">
+      <h2>Issue / Return Books</h2>
+      <p>Manage issuing and returning of books here.</p>
+      <div id="issue-requests"></div>
+    </div>
+
+    <div id="inventory" class="panel hidden">
+      <h2>Inventory (Grouped by Branch)</h2>
+      <div id="inventory-view"></div>
+    </div>
+
+    <div id="members" class="panel hidden">
+      <h2>Library Members</h2>
+      <div id="members-view"></div>
+    </div>
+
+    <div id="reports" class="panel hidden">
+      <h2>Library Reports</h2>
+      <p>Fines report and other stats</p>
+      <div id="reports-view"></div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

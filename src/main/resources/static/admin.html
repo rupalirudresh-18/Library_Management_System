@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body class="dashboard">
+  <div class="navbar">
+    <div class="left">
+      <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+      <h1>🧑‍💼 Admin Dashboard</h1>
+    </div>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+
+  <div class="sidebar">
+    <h2>Menu</h2>
+    <ul>
+      <li onclick="showPanel('overview')">📊 Overview</li>
+      <li onclick="showPanel('borrowed')">📚 Borrowed / Lost / Damaged</li>
+      <li onclick="showPanel('purchase')">💡 Purchase Requests</li>
+      <li onclick="showPanel('users')">👥 Users Reports</li>
+      <li onclick="showPanel('reports')">📑 Reports</li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <div class="cards-grid">
+      <div class="card blue" onclick="showPanel('overview')"><h3>Overview</h3><p>Library summary</p></div>
+      <div class="card green" onclick="showPanel('borrowed')"><h3>Borrowed / Damaged</h3><p>Track current status</p></div>
+      <div class="card orange" onclick="showPanel('purchase')"><h3>Purchase Requests</h3><p>Books requested for library</p></div>
+      <div class="card purple" onclick="showPanel('users')"><h3>Users Details</h3><p>Handle user accounts</p></div>
+    </div>
+
+    <div id="overview" class="panel hidden">
+      <h2>Library Overview</h2>
+      <p>Summary of current library activity and statistics.</p>
+    </div>
+
+    <div id="borrowed" class="panel hidden">
+      <h2>Borrowed / Damaged / Lost Books</h2>
+      <table class="table">
+        <tr><th>Category</th><th>Count</th></tr>
+        <tr><td>Borrowed Books</td><td>120</td></tr>
+        <tr><td>Lost Books</td><td>4</td></tr>
+        <tr><td>Damaged Books</td><td>2</td></tr>
+      </table>
+    </div>
+
+    <div id="purchase" class="panel hidden">
+      <h2>Requested Books for Purchase</h2>
+      <table class="table">
+        <tr><th>Title</th><th>Author</th><th>Edition</th></tr>
+        <tr><td>Introduction to AI</td><td>Russell & Norvig</td><td>4th</td></tr>
+        <tr><td>Clean Code</td><td>Robert C. Martin</td><td>1st</td></tr>
+      </table>
+    </div>
+
+    <div id="users" class="panel hidden">
+      <h2>Manage Users</h2>
+      <p>Add / Remove / Edit user access roles here.</p>
+    </div>
+
+    <div id="reports" class="panel hidden">
+      <h2>Reports</h2>
+      <p>Generate usage and fine reports.</p>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

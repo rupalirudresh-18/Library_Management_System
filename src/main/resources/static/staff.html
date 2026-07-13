@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Library Staff Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard">
+  <div class="navbar">
+    <div class="left">
+      <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+      <h1>👩‍💼 Staff Dashboard</h1>
+    </div>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+
+  <div class="sidebar">
+    <h2>Menu</h2>
+    <ul>
+      <li onclick="showPanel('manageBooks')">📚 Manage Books</li>
+      <li onclick="showPanel('availability')">📗 Book Availability</li>
+      <li onclick="showPanel('purchase')">🛒 Purchase List</li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <div class="cards-grid">
+      <div class="card blue" onclick="showPanel('manageBooks')"><h3>Manage Books</h3><p>Add / Delete Books</p></div>
+      <div class="card green" onclick="showPanel('availability')"><h3>Book Availability</h3><p>Set Available or Unavailable</p></div>
+      <div class="card orange" onclick="showPanel('purchase')"><h3>Purchase List</h3><p>Request new books for library</p></div>
+    </div>
+
+    <div id="manageBooks" class="panel hidden">
+      <h2>Manage Books</h2>
+      <div class="form-row">
+        <input type="text" id="m-title" placeholder="Book Title" class="input-small">
+        <input type="text" id="m-author" placeholder="Author" class="input-small">
+        <input type="text" id="m-id" placeholder="Book ID" class="input-small">
+        <input type="text" id="m-branch" placeholder="Branch (CSE/ECE/MECH/CIVIL/ISE)" class="input-small">
+        <button class="btn btn-primary" onclick="staffAddBook()">Add Book</button>
+        <button class="btn btn-neutral" onclick="renderManageList()">Refresh</button>
+      </div>
+      <div id="manage-list"></div>
+    </div>
+
+    <div id="availability" class="panel hidden">
+      <h2>Book Availability</h2>
+      <p>Mark books as available or unavailable based on stock.</p>
+      <div id="availability-list"></div>
+    </div>
+
+    <div id="purchase" class="panel hidden">
+      <h2>Purchase Requests</h2>
+
+      <div style="display:flex;gap:8px;margin:10px 0">
+        <input id="p-title" class="input-small" placeholder="Title">
+        <input id="p-author" class="input-small" placeholder="Author">
+        <input id="p-ed" class="input-small" placeholder="Edition">
+        <button class="btn btn-primary" id="p-add">Add to Purchase List</button>
+      </div>
+
+      <div id="purchase-list-view"></div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

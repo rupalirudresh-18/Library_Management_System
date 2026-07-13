@@ -1,0 +1,8 @@
+target/
+*.class
+.idea/
+*.iml
+.vscode/
+slips/*.pdf
+db.sqlite3
+.DS_Store
