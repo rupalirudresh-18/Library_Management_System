@@ -3,8 +3,7 @@
 A full-stack Library Management System built with **Java Spring Boot**, **MySQL**, and a custom HTML/CSS/JS frontend — built as a placement-ready project demonstrating real-world backend engineering: REST APIs, relational data modeling, automated email notifications, PDF generation, and scheduled background jobs.
 
 🔗 **Live Demo:** 
-librarymanagementsystem-production-03c7.up.railway.app
-
+https://librarymanagementsystem-production-03c7.up.railway.app 
 
 ---
 
@@ -33,6 +32,7 @@ librarymanagementsystem-production-03c7.up.railway.app
 Browser (HTML/CSS/JS)
 │  REST (fetch/JSON)
 ▼
+
 Spring Boot REST API
 ├── Controllers   → /api/auth, /api/books, /api/borrow, /api/purchase, /api/admin, /api/notifications
 ├── Services      → business logic (fines, emails, PDF slips, scheduling)
@@ -51,9 +51,6 @@ MySQL
 **Overdue handling:**
 `Daily scheduled job recalculates fines for all overdue books still checked out → sends reminder email (once per day per book)`
 
-## 📸 Screenshots
-
-*(add a few screenshots here — login page, student dashboard, admin analytics — placement reviewers like seeing the UI, not just reading about it)*
 
 ## 👤 Author
 
